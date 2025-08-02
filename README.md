@@ -27,9 +27,8 @@ dependencies {
 
 ## Usage
 
-Setup JAVA:
+Setup JAVA - Dialog 1:
  ```java
-    private void openCustomColorPicker() {
     CustomColorPickerDialog colorDialog = new CustomColorPickerDialog(this, "Select a color", defaultColor, true, new CustomColorPickerDialog.OnCustomColorPickerListener() {
         @Override
         public void onSelected(CustomColorPickerDialog dialog, int color) {
@@ -47,19 +46,18 @@ Setup JAVA:
         }
     });
     colorDialog.show();
-}
 
-private void openPresetsColorPicker() {
+ ```
+Setup JAVA - Dialog 2:
+ ```java
     PresetsColorPickerDialogBuilder.with(this).setTitle("Select a color").defaultColor(defaultColor).wheelType(PresetsColorPickerView.WHEEL_TYPE.FLOWER).density(10).setOnPresetsColorSelectedListener(selectedColor -> {
-    }).setPositiveButton("OK", (dialog, selectedColor, allColors) -> {
-        defaultColor = selectedColor;
-        ApplyAndSaveColor(selectedColor);
+        }).setPositiveButton("OK", (dialog, selectedColor, allColors) -> {
+defaultColor = selectedColor;
+ApplyAndSaveColor(selectedColor);
     }).setNegativeButton("Cancel", (dialog, which) -> {
-    }).setNeutralButton("Custom", (dialog, which) -> {
-        openCustomColorPicker();
-    }).build().show()
-    ;
-}
+        }).setNeutralButton("Custom", (dialog, which) -> {
+openCustomColorPicker();
+    }).build().show();
 
  ```
 .
