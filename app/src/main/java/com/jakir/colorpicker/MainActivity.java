@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             openCustomColorPicker();
         }).build().show()
         ;
-
     }
 
     private void ApplyAndSaveColor(int selectedColor) {
@@ -82,9 +81,6 @@ public class MainActivity extends AppCompatActivity {
             public void onCancel(CustomColorPickerDialog dialog) {
             }
         });
-
         colorDialog.show();
-
-
     }
 }
